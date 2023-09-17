@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felipe Alarcón - Electricista</title>
+    <style>
+        body {
+            background-image: url('tablero.jpeg.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: black;
+        }
+        h1 {
+            margin-top: 30px;
+            color: black;
+        }
+        .contact-info {
+            margin-top: 130px;
+        }
+        .job-description {
+            font-size: 20px; /* Cambiar el tamaño del texto */
+        }
+        .menu-container {
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Permitir que los elementos se envuelvan en una nueva línea si no caben en la misma fila */
+        }
+        .menu-item {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 20px;
+            border: 2px solid #003c7a;
+            border-radius: 10px;
+            text-decoration: none;
+            margin: 10px;
+            position: relative;
+        }
+        .submenu-container {
+            position: relative;
+        }
+        .submenu {
+            display: none;
+            position: absolute;
+            background-color: #003c7a;
+            text-align: left;
+            z-index: 1;
+            top: 100%;
+            left: 0;
+            border-radius: 10px;
+        }
+        .submenu a {
+            color: white;
+            padding: 10px 20px;
+            display: block;
+            text-decoration: none;
+            border-bottom: 1px solid #0056b3;
+        }
+        .submenu a:last-child {
+            border-bottom: none;
+        }
+        .menu-item:hover .submenu {
+            display: block;
+        }
+        .footer {
+            margin-top: 60px;
+        }
+        .footer-container {
+            display: flex;
+            justify-content: center;
+        }
+        .footer-item {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 20px;
+            border: 2px solid #003c7a;
+            border-radius: 10px;
+            text-decoration: none;
+            margin: 10px;
+        }
+        /* Estilos para el botón de música */
+        #music-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 20px;
+            border: 2px solid #003c7a;
+            border-radius: 10px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Etiqueta de audio -->
+    <audio id="background-music" loop>
+        <source src="audio de fondo.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Botón de control de música -->
+    <button id="music-control">Reproducir Música</button>
+
+    <h1>Felipe Alarcón</h1>
+    <p class="job-description">Electricista Domiciliario y de Obras</p>
+    <div class="contact-info">
+        <p>Email: <a href="mailto:alarconfelipe1995@gmail.com">alarconfelipe1995@gmail.com</a></p>
+    </div>
+    <div class="menu-container">
+        <div class="menu-item">Catálogo de Servicios
+            <div class="submenu-container">
+                <div class="submenu">
+                    <a href="#">Canalización</a>
+                    <a href="#">Cableado</a>
+                    <a href="#">Tableros</a>
+                    <a href="#">Iluminación</a>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item">Ver Trabajos Realizados
+            <div class="submenu-container">
+                <div class="submenu">
+                    <a href="https://drive.google.com/drive/folders/1FQQkVuZZTsXdoWe_xdhG_Ytvh4x_1-Ov?usp=drive_link">Monte Grande</a>
+                    <a href="https://drive.google.com/drive/folders/1KF84STOXDm5zxbxqA38hulguPPSSsSG8?usp=drive_link">San Isidro</a>
+                    <a href="https://drive.google.com/drive/folders/1Aq_4Q9Um6tPaoi2bNNWJ8K6QzulAbwY6?usp=drive_link">San Justo</a>
+                    <a href="https://drive.google.com/drive/folders/1dJ2Ut-ycIRHsXpigT6tzHTKCHioMMzRE?usp=drive_link">Polo Educativo M.E.Walsh</a>
+                    <a href="https://drive.google.com/drive/folders/1EYBN5kR2uAmPWRQ8qFnTr3ziqmvM37y5?usp=drive_link">T. Service Lanús</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-container">
+            <a class="footer-item" href="https://api.whatsapp.com/send?phone=1169660502">WhatsApp</a>
+            <a class="footer-item" href="https://www.instagram.com/electricista_felipealarcon/">Instagram</a>
+            <a class="footer-item" href="tel:1169660502">Llamar</a>
+        </div>
+    </div>
+
+    <script>
+        // Función para controlar la reproducción de música
+        const musicControl = document.getElementById('music-control');
+        const backgroundMusic = document.getElementById('background-music');
+
+        musicControl.addEventListener('click', () => {
+            if (backgroundMusic.paused) {
+                backgroundMusic.play();
+                musicControl.textContent = 'Pausar Música';
+            } else {
+                backgroundMusic.pause();
+                musicControl.textContent = 'Reproducir Música';
+            }
+        });
+    </script>
+</body>
+</html>
